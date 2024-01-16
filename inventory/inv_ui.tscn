@@ -1,0 +1,175 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvvarq5jmnwlo"]
+
+[ext_resource type="Texture2D" uid="uid://ljx20i8aj2lf" path="res://inventory/inventory-background.png" id="2_jj21b"]
+[ext_resource type="PackedScene" uid="uid://dcu3qstr78pqt" path="res://inventory/inv_ui_slot.tscn" id="3_q0qaf"]
+[ext_resource type="Texture2D" uid="uid://cymaxexgn1f7o" path="res://inventory/items/tile_0106.png" id="4_bie5e"]
+[ext_resource type="Texture2D" uid="uid://obs3uh4sgh8l" path="res://inventory/items/tile_0115.png" id="5_4rrf7"]
+[ext_resource type="Texture2D" uid="uid://b5nkaury6xmeq" path="res://inventory/items/tile_0102.png" id="7_gouct"]
+
+[sub_resource type="GDScript" id="GDScript_r8r1q"]
+script/source = "extends Control
+var is_open = false
+
+func _ready():
+	close()
+func _process(delta):
+	if Input.is_action_just_pressed(\"market\"):
+		if is_open:
+			close()
+		else:
+			open()
+	if is_open == true:
+		if Input.is_action_just_pressed(\"1\") and globals.player_gold >=100:
+			globals.player_damage +=5
+			globals.player_gold-=100
+			print(globals.player_damage)
+		if Input.is_action_just_pressed(\"2\") and globals.player_gold >=100:
+			globals.player_hp +=50
+			globals.player_gold-=100
+			print(globals.player_hp)
+		if Input.is_action_just_pressed(\"3\") and globals.player_gold >=150:
+			globals.player_speed +=25
+			globals.player_gold-=100
+			print(globals.player_speed)
+		if Input.is_action_just_pressed(\"4\") and globals.player_gold >=150:
+			globals.player_armor +=5
+			globals.player_gold-=100
+			print(globals.player_armor)
+		if Input.is_action_just_pressed(\"5\") and globals.player_gold >=100:
+			globals.player_regeneration +=1
+			globals.player_gold-=100
+			print(globals.player_regeneration)
+func open():
+	self.visible = true
+	is_open = true
+func close():
+	visible = false
+	is_open = false
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_twckr"]
+load_path = "res://.godot/imported/tile_0116.png-5a3a8b55e990b721f0d9c53acdc9995d.ctex"
+
+[node name="Inv_UI" type="Control"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -1052.0
+offset_bottom = -624.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_r8r1q")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 100.0
+offset_bottom = 23.0
+texture = ExtResource("2_jj21b")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -9.0
+offset_right = 48.5
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="inv_ui_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_q0qaf")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/GridContainer/inv_ui_slot"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 16.0
+offset_right = 135.0
+offset_bottom = 65.0
+scale = Vector2(0.1, 0.1)
+text = "Damage +10, 100G"
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/inv_ui_slot"]
+position = Vector2(8, 8)
+scale = Vector2(0.625, 0.71875)
+texture = ExtResource("4_bie5e")
+
+[node name="inv_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_q0qaf")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/GridContainer/inv_ui_slot2"]
+layout_mode = 0
+offset_left = 0.999999
+offset_top = 16.0
+offset_right = 132.0
+offset_bottom = 65.0
+scale = Vector2(0.1, 0.1)
+text = "Health +50, 100G"
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/inv_ui_slot2"]
+position = Vector2(8, 8)
+scale = Vector2(0.8125, 0.8125)
+texture = ExtResource("5_4rrf7")
+
+[node name="inv_ui_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_q0qaf")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/GridContainer/inv_ui_slot3"]
+layout_mode = 0
+offset_left = 0.999999
+offset_top = 16.0
+offset_right = 132.0
+offset_bottom = 65.0
+scale = Vector2(0.1, 0.1)
+text = "Speed +25, 150G"
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/inv_ui_slot3"]
+position = Vector2(8, 8)
+scale = Vector2(0.875, 0.875)
+texture = SubResource("CompressedTexture2D_twckr")
+
+[node name="inv_ui_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_q0qaf")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/GridContainer/inv_ui_slot4"]
+layout_mode = 0
+offset_left = 0.999999
+offset_top = 16.0
+offset_right = 132.0
+offset_bottom = 65.0
+scale = Vector2(0.1, 0.1)
+text = "Armor +5, 150G"
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/inv_ui_slot4"]
+position = Vector2(8.5, 8)
+scale = Vector2(0.90625, 0.921875)
+texture = ExtResource("7_gouct")
+
+[node name="inv_ui_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_q0qaf")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/GridContainer/inv_ui_slot5"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 174.0
+offset_bottom = 65.0
+scale = Vector2(0.1, 0.1)
+text = "Regeneration +1, 100G"
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/inv_ui_slot5"]
+position = Vector2(8, 7)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("5_4rrf7")

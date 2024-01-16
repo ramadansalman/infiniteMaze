@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ltjx1kv4nu0x"]
+
+[ext_resource type="PackedScene" uid="uid://cbh706d57deag" path="res://characters/demon_slime/demon_slime.tscn" id="1_j1er2"]
+[ext_resource type="PackedScene" uid="uid://dovx8ojro1870" path="res://characters/player/player.tscn" id="2_42rsp"]
+
+[node name="BossRoom" type="Node2D"]
+
+[node name="demon_slime" parent="." instance=ExtResource("1_j1er2")]
+position = Vector2(566, 322)
+
+[node name="Coco" parent="." instance=ExtResource("2_42rsp")]
+position = Vector2(304, 290)

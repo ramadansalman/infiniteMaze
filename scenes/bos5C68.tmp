@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ltjx1kv4nu0x"]
+
+[ext_resource type="PackedScene" uid="uid://cbh706d57deag" path="res://characters/demon_slime/demon_slime.tscn" id="1_j1er2"]
+
+[node name="BossRoom" type="Node2D"]
+
+[node name="demon_slime" parent="." instance=ExtResource("1_j1er2")]

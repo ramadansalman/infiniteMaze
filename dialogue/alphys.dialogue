@@ -1,0 +1,41 @@
+~ start
+
+if asgore_status == ""
+	Alphys: The guardian of the Infinite Maze want's to talk to you.
+	=> END
+	
+Player: Hey There! I heard you have a sword for me.
+Player: What did the guardian said.....
+Player: Sword... that... seals the darkn.....
+Alphys: Ah, the Grandmaster Sword, you are looking for.
+Alphys: A legendary blade forged in the fires of ancient craftsmanship.
+Alphys: It holds the power to vanquish even the mightiest foes,
+Alphys: in the right hands of course.
+Alphys: For the sword to reach its true power, you must prove your worth.
+Player: I love challenges.
+Alphys: Good. The sword is embedded in a large rock at the center of the forgotten forest.
+Alphys: Pull it out and it's yours.
+- Sounds easy.
+	Alphys: Easy??!?!?!! :O
+	Alphys: WHO DO YOU THINK YOU ARE, King Arthur or something?
+	Alphys: Sorry, ehem...
+	Alphys: There are just stories dude, don't get too carried away with them.
+	Alphys: Here, take the sword and go seal some darkness or whatever.
+	Alphys: Farewell.
+- Okay, that's gonna be tough but nothing I can't handle.
+	Alphys: HAHA! Got you there.
+	Alphys: Come on, my friend. It's not the Excalibur, it's the grandmaster Sword. you should have figured it out.
+	Player: Nice joke, I'll g've you that.
+	Alphys: The sword is yours, my king. he..he..he...
+	Player: xd
+	Player: Give it up already.
+	Player: Thanks for the sword. Until we meet again.
+- I think I know this story from somewhere, hmm...
+	Player: You can't fool me. You said Grandmaster Sword, not the Excalibur.
+	Alphys: You got me. So clever of you. Maybe you really are the one.
+	Alphys: It is an honour to give you this sword in person. May it enlighten your path and guide you through the maze.
+	Alphys: Farewell.
+	
+	set sword_status = "taken"
+	
+=> END

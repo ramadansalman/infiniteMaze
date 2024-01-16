@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3g2133lrnn6u"
+path="res://.godot/imported/Asgore Dialogue Sound Effect (Undertale Character Voice Beeps).mp3-9726c90484beb7c2d31d83a1918a9be0.mp3str"
+
+[deps]
+
+source_file="res://dialogue_balloon/Asgore Dialogue Sound Effect (Undertale Character Voice Beeps).mp3"
+dest_files=["res://.godot/imported/Asgore Dialogue Sound Effect (Undertale Character Voice Beeps).mp3-9726c90484beb7c2d31d83a1918a9be0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,70 @@
+~ start
+
+if rickroll_status == "rickrolled"
+	 => rickroll
+	
+Papyrus: [[Hello there|Hi there|Howdy]]
+Papyrus: I don't know you, you must be new around here. Cause i know EVERYONE.
+Papyrus: How lucky you are, I have a challenge for the newcomers.
+Papyrus: Wanna Play?
+- YES
+	Papyrus: Good.
+- No
+	=> END
+- .....
+	Papyrus: I'll take that as a YES.
+Papyrus: Let's start. There is a surprise at the end if you win, so try to answer correctly.
+Papyrus: Guess the antonyms and win the prize.
+~ first
+Papyrus: "Always"
+- Ever
+	Papyrus: Try again!
+	=> first
+- Never => second
+- Sometimes
+	Papyrus: Try again!
+	=> first
+~ second
+Papyrus: "coming from"
+- Going to => third
+- Coming at
+	Papyrus: Try again!
+	=> second
+- Getting in
+	Papyrus: Try again!
+	=> second
+~ third
+Papyrus: "Take"
+- Hold
+	Papyrus: Try again!
+	=> third
+- Put
+	Papyrus: Try again!
+	=> third
+- Give => fourth
+~ fourth
+Papyrus: "Me"
+- We
+	Papyrus: Try again!
+	=> fourth
+- Us
+	Papyrus: Try again!
+	=> fourth
+- You => fifth
+~ fifth
+Papyrus: "Down"
+- Left
+	Papyrus: Try again!
+	=> fifth
+- Up
+	set rickroll_status = "rickrolled"
+	 => rickroll
+- Right
+	Papyrus: Try again!
+	=> fifth
+~ rickroll
+Papyrus: Never gonna give you up
+Papyrus: Never gonna let you down
+Papyrus: Never gonna run around and desert you
+
+=> END

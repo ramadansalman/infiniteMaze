@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvo70qd07iu1"]
+
+[ext_resource type="TileSet" uid="uid://b2nr48tlj05re" path="res://tilepattern.tres" id="1_gjunb"]
+[ext_resource type="Script" path="res://maze_gen.gd" id="3_ggd24"]
+
+[node name="TileMap" type="TileMap"]
+position = Vector2(67, 66)
+scale = Vector2(0.4, 0.4)
+tile_set = ExtResource("1_gjunb")
+format = 2
+script = ExtResource("3_ggd24")
+y_dim = 61
+x_dim = 61

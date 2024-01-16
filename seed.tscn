@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://0d5hc0qpt72l"]
+
+[sub_resource type="GDScript" id="GDScript_exhca"]
+script/source = "extends Control
+
+@onready var globals = get_node(\"/root/Globals\")
+
+var seed_line_edit: LineEdit
+
+func _ready():
+	seed_line_edit = $LineEdit 
+	
+func _on_SeedEntered(new_text: String):
+	var seed_value = new_text.strip_edges() 
+	if seed_value != \"\":
+		randomize() 
+		seed(seed_value.to_int()) 
+	else:
+		randomize() 
+
+
+func _on_line_edit_text_submitted(new_text):
+	globals.seedToUse = new_text
+	print(globals.seedToUse)
+	seed(int(globals.seedToUse))
+"
+
+[sub_resource type="SystemFont" id="SystemFont_yhg2d"]
+font_names = PackedStringArray("Impact")
+
+[node name="Seed" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_exhca")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 80.0
+offset_bottom = 40.0
+theme_override_constants/separation = 160
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_yhg2d")
+theme_override_font_sizes/font_size = 32
+text = "Seed"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 55)
+layout_mode = 2
+
+[connection signal="text_changed" from="HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://0vxnjs4hwq0o"
+path="res://.godot/imported/asgore.dialogue-0520f847a92ade4857f7f697c796bcc0.tres"
+
+[deps]
+
+source_file="res://dialogue/asgore.dialogue"
+dest_files=["res://.godot/imported/asgore.dialogue-0520f847a92ade4857f7f697c796bcc0.tres"]
+
+[params]
+
+defaults=true

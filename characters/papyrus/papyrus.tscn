@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cci63ynhdsabb"]
+
+[ext_resource type="Texture2D" uid="uid://cu04mwfbc0jw4" path="res://characters/papyrus/papyrus.png" id="1_b3mnj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16i8m"]
+radius = 7.0
+height = 20.0
+
+[node name="Papyrus" type="StaticBody2D"]
+
+[node name="Papyrus" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("1_b3mnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 10)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_16i8m")

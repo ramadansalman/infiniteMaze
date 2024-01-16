@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0rh48j5dahca"]
+
+[ext_resource type="PackedScene" uid="uid://b7jq88dgk5vrx" path="res://window_mode_button.tscn" id="1_okwe1"]
+[ext_resource type="PackedScene" uid="uid://0d5hc0qpt72l" path="res://seed.tscn" id="2_qbuep"]
+
+[node name="Settings_Tab_Container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="option1" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/option1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/option1/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/option1/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Window_Mode_Button" parent="TabContainer/option1/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_okwe1")]
+layout_mode = 2
+
+[node name="option2" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/option2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/option2/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/option2/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Seed" parent="TabContainer/option2/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_qbuep")]
+layout_mode = 2

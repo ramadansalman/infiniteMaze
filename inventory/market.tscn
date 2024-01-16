@@ -1,0 +1,128 @@
+[gd_scene load_steps=8 format=3 uid="uid://n10pjxhxk8u"]
+
+[ext_resource type="Texture2D" uid="uid://ljx20i8aj2lf" path="res://inventory/inventory-background.png" id="1_xjdgj"]
+[ext_resource type="Script" path="res://inventory/market.gd" id="2_qfhal"]
+[ext_resource type="PackedScene" uid="uid://dcu3qstr78pqt" path="res://inventory/inv_ui_slot.tscn" id="3_so8pc"]
+[ext_resource type="Texture2D" uid="uid://cymaxexgn1f7o" path="res://inventory/items/tile_0106.png" id="4_7jclt"]
+[ext_resource type="Texture2D" uid="uid://obs3uh4sgh8l" path="res://inventory/items/tile_0115.png" id="5_ippli"]
+[ext_resource type="Texture2D" uid="uid://b5nkaury6xmeq" path="res://inventory/items/tile_0102.png" id="6_jr3tt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_twckr"]
+load_path = "res://.godot/imported/tile_0116.png-5a3a8b55e990b721f0d9c53acdc9995d.ctex"
+
+[node name="NinePatchRect" type="NinePatchRect"]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 100.0
+offset_bottom = 32.0
+texture = ExtResource("1_xjdgj")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("2_qfhal")
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -10.0
+offset_right = 48.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="inv_ui_slot" parent="GridContainer2" instance=ExtResource("3_so8pc")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer2/inv_ui_slot"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = 17.5
+offset_right = 143.5
+offset_bottom = 66.5
+scale = Vector2(0.1, 0.1)
+text = "Damage +10, 100G
+Press 1"
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer2/inv_ui_slot"]
+position = Vector2(8, 8)
+scale = Vector2(0.625, 0.71875)
+texture = ExtResource("4_7jclt")
+
+[node name="inv_ui_slot2" parent="GridContainer2" instance=ExtResource("3_so8pc")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer2/inv_ui_slot2"]
+layout_mode = 0
+offset_left = 1.5
+offset_top = 17.5
+offset_right = 132.5
+offset_bottom = 66.5
+scale = Vector2(0.1, 0.1)
+text = "Health +50, 100G
+Press 2"
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer2/inv_ui_slot2"]
+position = Vector2(8, 8)
+scale = Vector2(0.8125, 0.8125)
+texture = ExtResource("5_ippli")
+
+[node name="inv_ui_slot3" parent="GridContainer2" instance=ExtResource("3_so8pc")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer2/inv_ui_slot3"]
+layout_mode = 0
+offset_left = 1.5
+offset_top = 17.5
+offset_right = 132.5
+offset_bottom = 66.5
+scale = Vector2(0.1, 0.1)
+text = "Speed +25, 150G
+Press 3"
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer2/inv_ui_slot3"]
+position = Vector2(8, 8)
+scale = Vector2(0.875, 0.875)
+texture = SubResource("CompressedTexture2D_twckr")
+
+[node name="inv_ui_slot4" parent="GridContainer2" instance=ExtResource("3_so8pc")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer2/inv_ui_slot4"]
+layout_mode = 0
+offset_left = 0.499999
+offset_top = 17.5
+offset_right = 131.5
+offset_bottom = 66.5
+scale = Vector2(0.1, 0.1)
+text = "Armor +5, 150G
+Press 4"
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer2/inv_ui_slot4"]
+position = Vector2(8.5, 8)
+scale = Vector2(0.90625, 0.921875)
+texture = ExtResource("6_jr3tt")
+
+[node name="inv_ui_slot5" parent="GridContainer2" instance=ExtResource("3_so8pc")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer2/inv_ui_slot5"]
+layout_mode = 0
+offset_left = -1.5
+offset_top = 17.5
+offset_right = 172.5
+offset_bottom = 66.5
+scale = Vector2(0.1, 0.1)
+text = "Regeneration +1, 100G
+Press 5"
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer2/inv_ui_slot5"]
+position = Vector2(8, 7)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("5_ippli")

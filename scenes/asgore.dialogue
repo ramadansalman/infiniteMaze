@@ -1,0 +1,30 @@
+~ start
+
+if sword_status == "taken"
+	Asgore: Now that you got the Grandmaster Sword, nothing can stop you, adventurer.
+	=> END
+	
+Asgore: Greetings, brave adventurer! Welcome to my Village.
+Asgore: I am known as Asgore, the guardian of this town.
+- Cool, now let me pass!
+	Asgore: >:(
+- Hello, Asgore! Nice to meet you.
+	Asgore: Let me tell you a story.
+	Asgore: One day, a foreign warrior will come to this city and go to that terrible labyrinth that terrorizes the village and fight off the evil.
+	Asgore: No one who has ever entered through its doors has ever returned.
+	Asgore: But this warrior is not alone.
+	Asgore: Legends say that a sword that seals the darkness will accompany our warrior.
+	- I dont believe prophecies. => END
+	- Where is the sword?
+		Asgore: Hmm so you think you are that warrior.
+		- Who else could it be, of course it's me!
+			Asgore: Okay then. I don't think it's you at all, but of course you can see the sword. Besides, no one can carry that sword except the Warrior.
+			Agore: Go to the man next to the market and he will show you.
+		- I just want to see the sword.
+			Asgore: Okay then. I don't think it's you at all, but of course you can see the sword. Besides, no one can carry that sword except the Warrior.
+			Agore: Go to the man next to the market and he will show you.
+	
+	Player: Thanks, See ya!
+	set asgore_status = "talked"
+	
+=> END

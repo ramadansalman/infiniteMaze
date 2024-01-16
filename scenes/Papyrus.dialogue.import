@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://djsjw5v7v3syd"
+path="res://.godot/imported/Papyrus.dialogue-59466c9022c56c186b33cb6c654fd3cd.tres"
+
+[deps]
+
+source_file="res://scenes/Papyrus.dialogue"
+dest_files=["res://.godot/imported/Papyrus.dialogue-59466c9022c56c186b33cb6c654fd3cd.tres"]
+
+[params]
+
+defaults=true

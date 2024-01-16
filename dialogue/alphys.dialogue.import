@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cc0nm47l2bqor"
+path="res://.godot/imported/alphys.dialogue-f30b63a01a326e1ff07afae2408c6a7c.tres"
+
+[deps]
+
+source_file="res://dialogue/alphys.dialogue"
+dest_files=["res://.godot/imported/alphys.dialogue-f30b63a01a326e1ff07afae2408c6a7c.tres"]
+
+[params]
+
+defaults=true

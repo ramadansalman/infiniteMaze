@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://nk632i46q0j8"]
+
+[ext_resource type="Script" path="res://characters/bringer_of_death_boss/spell.gd" id="1_bc0va"]
+[ext_resource type="Texture2D" uid="uid://djmwuc7y4fei2" path="res://boss_bringer_assets/SpriteSheet/Bringer-of-Death-SpritSheet.png" id="1_rfqwf"]
+
+[sub_resource type="Animation" id="Animation_vxamn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [48]
+}
+
+[sub_resource type="Animation" id="Animation_gykko"]
+resource_name = "spell"
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"hit"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5sni8"]
+_data = {
+"RESET": SubResource("Animation_vxamn"),
+"spell": SubResource("Animation_gykko")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvbm0"]
+size = Vector2(50.5, 24.0001)
+
+[node name="spell" type="Area2D"]
+script = ExtResource("1_bc0va")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_rfqwf")
+hframes = 8
+vframes = 8
+frame = 48
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5sni8")
+}
+autoplay = "spell"
+
+[node name="DamageableFinder" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, -33.6634)
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableFinder"]
+position = Vector2(53.4134, 5.99975)
+shape = SubResource("RectangleShape2D_vvbm0")
